@@ -12,6 +12,12 @@ public class StudentMain {
 		
 		
 		System.out.println("프로그램 종료");
+		
+		
+		StudentView sv = new StudentView();
+		//sv.viewOne("??");
+		//sv.viewMessage();
+		
 	}
 
 }
