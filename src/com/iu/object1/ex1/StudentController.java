@@ -46,7 +46,7 @@ public class StudentController {
 				} else if(select==4) {
 					
 				} else if(select==5) {
-					ss.addStudnt(student5);
+					student5 = ss.addStudnt(student5);
 					
 				} else if(select==6) {
 					break;

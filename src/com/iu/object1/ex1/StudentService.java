@@ -11,6 +11,13 @@ public class StudentService {
 		sc = new Scanner(System.in);
 		sss = new Student();
 	}
+	
+	//removeStudent 학생들의 정보를 받아서
+	//삭제하려는 학생의 번호를 입력받아요; 일치하는학생 삭제, 남은학생의정보리턴
+	public void removeStudent() {
+		
+	}
+	
 	//addStudent - 학생들의 정보를 받아서
 	//학생 한명 추가, 추가 완료된 학생 정보들을 리턴
 	public Student [] addStudnt(Student [] s) {
@@ -20,20 +27,21 @@ public class StudentService {
 		int i=0;
 		for(i=0;i<sCopy.length-1;i++) {
 			sCopy[i] = new Student();
-			sCopy[i].name = s[i].name;
-			sCopy[i].num = s[i].num;
-			sCopy[i].kor = s[i].kor;
-			sCopy[i].eng = s[i].eng;
-			sCopy[i].math = s[i].math;
-			sCopy[i].total = s[i].total;
-			sCopy[i].avg = s[i].avg;
+			sCopy[i].getName() = s[i].getName();
+			sCopy[i].getNum() = s[i].getNum;
+			sCopy[i].getKor() = s[i].getKor;
+			sCopy[i].getEng() = s[i].getEng;
+			sCopy[i].getMath() = s[i].getMath;
+			sCopy[i].getTotal = s[i].getTotal;
+			sCopy[i].getAvg = s[i].getAvg;
 		}
 		sCopy[i] = new Student();
-		sCopy[i].name = sc.next();
-		sCopy[i].num = sc.nextInt();
-		sCopy[i].kor = sc.nextInt();
-		sCopy[i].eng = sc.nextInt();
-		sCopy[i].math = sc.nextInt();
+		sCopy[i].setName(sc.next());
+		sCopy[i].setNum(sc.nextInt());
+		sCopy[i].setKor(sc.nextInt());
+		sCopy[i].setEng(sc.nextInt());
+		sCopy[i].setMath(sc.nextInt());
+		sCopy[i].setTotal();
 		//sCopy[i].total = sss.setTotal();
 		
 		
@@ -54,7 +62,9 @@ public class StudentService {
 		int num=sc.nextInt();
 		Student student = null;
 		for(int i=0;i<students.length;i++) {
-			if(num == students[i].num) {
+			if(num == students[i].getNum()) {
+			//s.setNum(sc.nextInt());
+			
 				student = students[i];
 				//break;
 				return student;
@@ -83,11 +93,12 @@ public class StudentService {
 		for(int i=0;i<students.length;i++) {
 			System.out.println(i+1+"번째 학생의 이름, 번호, 국어점수, 영어점수, 수학점수를 차례대로 입력하세요");
 			Student s = new Student();
-			s.name = sc.next();
-			s.num = sc.nextInt();
-			s.kor = sc.nextInt();
-			s.eng= sc.nextInt();
-			s.math = sc.nextInt();
+			s.setName(sc.next());
+			//s.name = sc.next();
+			s.setNum(sc.nextInt());
+			s.setKor(sc.nextInt());
+			s.setEng(sc.nextInt());
+			s.setMath(sc.nextInt());
 			s.setTotal();
 //			s.total = s.kor+s.eng+s.math;
 //			s.avg = s.total/3;
