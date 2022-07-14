@@ -4,9 +4,49 @@ import java.util.Scanner;
 
 public class StudentService {
 	StudentView sv = new StudentView();
-	Scanner sc = new Scanner(System.in);
-	//findStudent 검색하고싶은학생의번호를입력받아서 같은번호의학생을찾아서 그학생한명을리턴 없으면null리턴
+	Scanner sc; 
+	Student sss;
 	
+	public StudentService() {
+		sc = new Scanner(System.in);
+		sss = new Student();
+	}
+	//addStudent - 학생들의 정보를 받아서
+	//학생 한명 추가, 추가 완료된 학생 정보들을 리턴
+	public Student [] addStudnt(Student [] s) {
+		System.out.println("추가할 학생의 이름 번호 국어 영어 수학 입력");
+		//Student [] sCopy;
+		Student [] sCopy = new Student[s.length+1];
+		int i=0;
+		for(i=0;i<sCopy.length-1;i++) {
+			sCopy[i] = new Student();
+			sCopy[i].name = s[i].name;
+			sCopy[i].num = s[i].num;
+			sCopy[i].kor = s[i].kor;
+			sCopy[i].eng = s[i].eng;
+			sCopy[i].math = s[i].math;
+			sCopy[i].total = s[i].total;
+			sCopy[i].avg = s[i].avg;
+		}
+		sCopy[i] = new Student();
+		sCopy[i].name = sc.next();
+		sCopy[i].num = sc.nextInt();
+		sCopy[i].kor = sc.nextInt();
+		sCopy[i].eng = sc.nextInt();
+		sCopy[i].math = sc.nextInt();
+		//sCopy[i].total = sss.setTotal();
+		
+		
+		s = sCopy;
+		return s;
+		
+	}
+	
+	
+	
+	
+	//findStudent 검색하고싶은학생의번호를입력받아서 같은번호의학생을찾아서 
+	//그학생한명을리턴 없으면null리턴
 	
 	//리턴하려는 학생데이터
 	public Student findStudent(Student [] students) {
@@ -16,8 +56,8 @@ public class StudentService {
 		for(int i=0;i<students.length;i++) {
 			if(num == students[i].num) {
 				student = students[i];
-				break;
-				//return student;
+				//break;
+				return student;
 				//=break랑 같은 역할
 			} 
 		}
@@ -35,7 +75,7 @@ public class StudentService {
 	//학생들을 리턴
 	
 	public Student [] makeStudents() {
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("인원수는 몇명?");
 		int count=sc.nextInt();
 		Student [] students = new Student[count];
@@ -48,8 +88,9 @@ public class StudentService {
 			s.kor = sc.nextInt();
 			s.eng= sc.nextInt();
 			s.math = sc.nextInt();
-			s.total = s.kor+s.eng+s.math;
-			s.avg = s.total/3;
+			s.setTotal();
+//			s.total = s.kor+s.eng+s.math;
+//			s.avg = s.total/3;
 			//System.out.println(name[i]);
 			students[i] = s;
 			
