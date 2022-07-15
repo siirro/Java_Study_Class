@@ -28,12 +28,12 @@ public class StudentService {
 		for(i=0;i<sCopy.length-1;i++) {
 			sCopy[i] = new Student();
 			sCopy[i].getName() = s[i].getName();
-			sCopy[i].getNum() = s[i].getNum;
-			sCopy[i].getKor() = s[i].getKor;
-			sCopy[i].getEng() = s[i].getEng;
-			sCopy[i].getMath() = s[i].getMath;
-			sCopy[i].getTotal = s[i].getTotal;
-			sCopy[i].getAvg = s[i].getAvg;
+			sCopy[i].getNum() = s[i].getNum();
+			sCopy[i].getKor() = s[i].getKor();
+			sCopy[i].getEng() = s[i].getEng();
+			sCopy[i].getMath() = s[i].getMath();
+			sCopy[i].getTotal = s[i].getTotal();
+			sCopy[i].getAvg = s[i].getAvg();
 		}
 		sCopy[i] = new Student();
 		sCopy[i].setName(sc.next());
