@@ -1,7 +1,6 @@
 package com.iu.object1.ex1;
 
 public class StudentView {
-//	Student s = new Student();
 	
 	//viewMessage 문자열을 받아서 그 문자열을 출력
 	public void viewMessage(String message) {

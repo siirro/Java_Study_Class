@@ -9,13 +9,13 @@ public class Ex1Main {
 
 		Student st1 = new Student();
 		
-		st1.name = "웅이";
-		st1.num = 1;
-		st1.kor = 100;
-		st1.eng = 100;
-		st1.math = 100;
-		st1.total = st1.kor+st1.eng+st1.math;
-		st1.avg = st1.total/3;
+		st1.setName("웅이");
+		st1.setNum(1);
+		st1.setKor(100);
+		st1.setEng(100);
+		st1.setMath(100);
+		st1.setTotal();
+		st1.setAvg(st1.total/3);
 
 		//Student student2 = new Student();		
 		//Student student3 = new Student();
